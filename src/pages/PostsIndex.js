@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
+import PostsList from '../containers/PostsListContainer.js';
 
-
-class PostIndex extends Component {
+class PostsIndex extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>PostIndex</h1>
-      </div>
+        <PostsList />
     );
   }
 }
 
-export default PostIndex;
+export default PostsIndex;

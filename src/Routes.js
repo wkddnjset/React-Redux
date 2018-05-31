@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import App from './pages/App';
 import PostsIndex from './pages/PostsIndex';
+import PostsShow from './pages/PostsShow';
+import PostsNew from './pages/PostsNew';
+
+
 
 class Routes extends Component {
   render() {
     return (
-        <Route exact path="/" component={App}>
-        <Route exact path="/" component={PostsIndex}/>
-        </Route>
+    	<div>
+	    	<App/>
+	    	<Switch>
+		        <Route exact path="/" component={PostsIndex}/>
+		        <Route exact path="/posts" component={PostsIndex}/>
+		        <Route exact path="/posts/new" component={PostsNew}/>
+		        <Route exact path="/posts/:id" component={PostsShow}/>
+	        </Switch>
+        </div>
     );
   }
 }
