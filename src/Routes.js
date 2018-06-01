@@ -13,7 +13,7 @@ class Routes extends Component {
     	<div>
 	    	<App/>
 	    	<Switch>
-		        <Route exact path="/" component={PostsIndex}/>
+	    		<Route exact path="/" component={PostsIndex}/>
 		        <Route exact path="/posts" component={PostsIndex}/>
 		        <Route exact path="/posts/new" component={PostsNew}/>
 		        <Route exact path="/posts/:id" component={PostsShow}/>

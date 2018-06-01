@@ -10,7 +10,7 @@ class PostsList extends Component {
     return posts.map((post) => {
       return (
         <li className="list-group-item" key={post.id}>
-          <NavLink style={{color:'black'}} to={"posts/" + post.id}>
+          <NavLink style={{color:'black'}} to={"/posts/"+post.id}>
             <h3 className="list-group-item-heading">{post.title}</h3>
           </NavLink>
         </li>
