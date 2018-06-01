@@ -1,5 +1,6 @@
 import PostDetails from '../components/PostDetails.js';
 import { fetchPost, fetchPostSuccess, fetchPostFailure, resetActivePost, resetDeletedPost } from '../actions/posts';
+import { fetchPosts, fetchPostsSuccess, fetchPostsFailure } from '../actions/posts';
 import { connect } from 'react-redux';
 
 
