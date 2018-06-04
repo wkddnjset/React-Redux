@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+// Post Length
+export const FETCH_POSTSLEN = 'FETCH_POSTSLEN';
+export const FETCH_POSTSLEN_SUCCESS = 'FETCH_POSTSLEN_SUCCESS';
+export const FETCH_POSTSLEN_FAILURE = 'FETCH_POSTSLEN_FAILURE';
+
 //Post list
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
@@ -26,6 +31,36 @@ export const RESET_DELETED_POST = 'RESET_DELETED_POST';
 
 // const ROOT_URL = location.href.indexOf('localhost') > 0 ? 'http://localhost:3000/api' : '/api';
 const ROOT_URL = 'https://jsonplaceholder.typicode.com';
+
+// Post 리스트 갯수
+export function fetchPostsLength() {
+  const request = axios({
+    method: 'get',
+    url: `${ROOT_URL}/posts`,
+    headers: []
+  });
+  return {
+    type: FETCH_POSTSLEN,
+    payload: request
+  };
+}
+
+// Post 리스트 갯수 파싱 성공
+export function fetchPostsLengthSuccess(posts) {
+  return {
+    type: FETCH_POSTSLEN_SUCCESS,
+    payload: posts
+  };
+}
+
+// Post 리스트 갯수 파싱 실패
+export function fetchPostsLengthFailure(posts) {
+  return {
+    type: FETCH_POSTSLEN_FAILURE,
+    payload: posts
+  };
+}
+
 
 // Post 리스트 파싱
 export function fetchPosts() {

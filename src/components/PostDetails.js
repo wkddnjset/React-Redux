@@ -16,9 +16,11 @@ class PostDetails extends Component {
 
   componentDidMount() {
     this.props.fetchPost(this.props.postId);
+    this.props.fetchPosts();
   }
 
   render() {
+    const postsLen = this.props.postsList.posts.length;
     const { post, loading, error } = this.props.activePost;
 
     if (loading) {
@@ -33,7 +35,7 @@ class PostDetails extends Component {
       <div className="container">
         <h3>{post.title}</h3>
         <p>{post.body}</p>
-        <Pagenation postId={this.props.postId}/>
+        <Pagenation postId={this.props.postId} postsLen={postsLen}/>
       </div>
 
     );

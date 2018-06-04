@@ -19,6 +19,7 @@ class PostsList extends Component {
   }
 
   render() {
+  	console.log(this.props);
     const { posts, loading, error } = this.props.postsList;
 
     if(loading) {

@@ -4,16 +4,21 @@ import { fetchPosts, fetchPostsSuccess, fetchPostsFailure } from '../actions/pos
 import { connect } from 'react-redux';
 
 
-
 function mapStateToProps(globalState, ownProps) {
   return {
     activePost: globalState.posts.activePost,
+    postsList: globalState.posts.postsList,
     postId: ownProps.id
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchPosts: () => {
+      dispatch(fetchPosts()).then((response) => {
+            !response.error ? dispatch(fetchPostsSuccess(response.payload.data)) : dispatch(fetchPostsFailure(response.payload.data));
+          });
+    },
     fetchPost: (id) => {
       dispatch(fetchPost(id))
         .then((result) => {
