@@ -49,7 +49,7 @@ class PostForm extends Component {
 
   	componentWillReceiveProps(nextProps) {
     	if (nextProps.newPost.post && !nextProps.newPost.error) {
-      		this.context.router.push('/');
+      		this.context.router.history.push('/');
     	}
   	}
 
